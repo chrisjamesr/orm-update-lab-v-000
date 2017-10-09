@@ -43,7 +43,7 @@ class Student
   end
 
   def self.create(id, name, grade)
-    Student.new(id=nil, name, grade).save
+    Student.new(id, name, grade).save
   end
 
   def update
