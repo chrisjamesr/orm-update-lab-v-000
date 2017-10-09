@@ -46,4 +46,14 @@ class Student
     Student.new(nil, name, grade)
   end
 
+  def update
+    sql = <<-SQL
+      UPDATE TABLE students
+      SET name = ?, grade = ?
+      WHERE id = ?
+    SQL
+
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
+  end
+
 end  #  End of Class
